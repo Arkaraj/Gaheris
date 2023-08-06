@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package geoLocationPackage;
+
+message User {
+    int32 id = 1;
+    string name = 2;
+    Location location = 3;
+}
+
+message UserCreateRequest {
+    string name = 2;
+    Location location = 3;
+}
+
+message UserList {
+    repeated User users = 1;
+}
+
+message UserRequest {
+    int32 id = 1;
+}
+
+message searchRequest {
+    string query = 1;
+    int32 limit = 2;
+}
+
+message LocationRequest {
+    int32 id = 1;
+    float latitude = 2;
+    float longitude = 3;
+}
+
+message Location {
+    float latitude = 1;
+    float longitude = 2;
+}
+
+message Empty {}
+
+service GeoLocationService {
+    rpc createUser(UserCreateRequest) returns (User);
+    rpc getAllUsersLocation(searchRequest) returns (UserList);
+    rpc getUsersCurrentLocation(UserRequest) returns (Location);
+    rpc updateUserCurrentLocation(LocationRequest) returns (User);
+}

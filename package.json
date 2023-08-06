@@ -1,0 +1,23 @@
+{
+  "name": "gaheris",
+  "version": "1.0.0",
+  "description": "Grpc Service to update/get user's location",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "server": "node ./server/index.js",
+    "client": "node ./client/index.js"
+  },
+  "keywords": [
+    "gRPC",
+    "Mysql",
+    "Proto Buffers"
+  ],
+  "author": "Arkaraj Ghosh",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.0",
+    "@grpc/proto-loader": "^0.7.8",
+    "mysql2": "^3.6.0"
+  }
+}
